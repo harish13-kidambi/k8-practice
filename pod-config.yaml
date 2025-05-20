@@ -12,13 +12,12 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: env-pod
-spec: 
-  containers: 
+spec:
+  containers:
     - name: env-pod
       image: nginx
       envFrom:
-      -  ConfigMapKeyref:
-         name: config-test
-
+        - configMapRef:
+            name: config-test
 
 
