@@ -17,7 +17,8 @@ spec:
   - image: nginx
     name: env-pod
     env:
-    - name: department
-      value: dev
-    - name: kind
-      value: test
+    - name: CART_HOST
+      valueFrom:
+        ConfigMapKeyref:
+        name: config-test
+        key: CART_HOST
