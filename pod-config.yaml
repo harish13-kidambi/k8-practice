@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-test
+data: 
+  CART_HOST: cart
+  USER_HOST: user
+  MYSQL_HOST: mysql
+  MYSQL_SCHEMA: cities
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-pod
+spec: 
+  containers: 
+  - image: nginx
+    name: env-pod
+    env:
+    - name: department
+      value: dev
+    - name: kind
+      value: test
