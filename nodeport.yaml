@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: service-pod
+  labels:
+    name: service-pod
+    environment: dev
+spec:
+  selector:
+    type: Nodeport
+    course: kubernetes
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80 #service port
+    targetPort: 80 #pod port
